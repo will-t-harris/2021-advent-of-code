@@ -18,7 +18,7 @@ try {
     crlfDelay: Infinity,
   });
 
-  await readlineStream.on("line", (input) => {
+readlineStream.on("line", (input) => {
     const [direction, quantity] = input.split(":");
 
     switch (true) {
