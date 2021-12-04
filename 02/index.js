@@ -4,6 +4,7 @@ import readline from "readline";
 
 let horizontalPosition = 0;
 let depth = 0;
+let aim = 0;
 
 try {
   const string = fs.readFileSync("data.txt", "utf8");
@@ -23,14 +24,17 @@ try {
     switch (true) {
       case direction === "forward": {
         horizontalPosition += Number(quantity);
+
+        depth += aim * Number(quantity);
+
         break;
       }
       case direction === "up": {
-        depth -= Number(quantity);
+        aim -= Number(quantity);
         break;
       }
       case direction === "down": {
-        depth += Number(quantity);
+        aim += Number(quantity);
       }
       default: {
         break;
